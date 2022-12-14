@@ -15,6 +15,8 @@ The "useful" and "funny" columns are similar to the "cool" column.
 # About the Data
 
 The data is a detailed dump of Yelp reviews, businesses, users, and checkins for the Phoenix, AZ metropolitan area. 
+
+
 Business
 {
   'type': 'business',
@@ -31,6 +33,8 @@ Business
   'categories': [(localized category names)]
   'open': True / False (corresponds to permanently closed, not business hours),
 }
+
+
 Review
 {
   'type': 'review',
@@ -41,6 +45,8 @@ Review
   'date': (date, formatted like '2012-03-14', %Y-%m-%d in strptime notation),
   'votes': {'useful': (count), 'funny': (count), 'cool': (count)}
 }
+
+
 User
 Some user profiles are omitted from the data because they have elected not to have public profiles. Their reviews may still be in the data set if they are still visible on Yelp.
 
@@ -52,6 +58,8 @@ Some user profiles are omitted from the data because they have elected not to ha
   'average_stars': (floating point average, like 4.31),
   'votes': {'useful': (count), 'funny': (count), 'cool': (count)}
 }
+
+
 Checkin
 If there are no checkins for a business, the entire record will be omitted.
 
@@ -67,6 +75,8 @@ If there are no checkins for a business, the entire record will be omitted.
         '23-6': (number of checkins from 23:00 to 00:00 on all Saturdays)
   } # if there was no checkin for an hour-day block it will not be in the dict
 }
+
+
 Testing Data
 The testing data format is the same as the training data, except that several fields have been removed. Identifiers are consistent between the test set and the training set. The test set's user and business files only contain the records that cannot already be found in the training set. Information from the training set was not duplicated into the testing set; please cross reference both data sets to make your predictions. Although these users and businesses may not be new to Yelp, they are new to this data set, and don't have as much information attached to them.
 
